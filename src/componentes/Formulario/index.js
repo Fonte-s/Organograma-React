@@ -22,6 +22,7 @@ const Formulario = () => {
     const [nome, setNome] = useState(' ')
     const [cargo, setCargo] = useState(' ')
     const [imagem, setImagem] = useState(' ')
+    const [time, setTime] = useState(' ')
 
     const aoSalvar = (evento) => {
         evento.preventDefault()
@@ -55,7 +56,13 @@ const Formulario = () => {
                 valor={imagem}
                   aoAlterado={valor => setImagem(valor)}
                   ></CampoTexto>
-                <ListaSuspensa obrigatorio={true} label="Time" itens ={times}></ListaSuspensa>
+                  
+                <ListaSuspensa 
+                obrigatorio={true} 
+                label="Time" 
+                itens ={times}
+               valor={time}
+               aoAlterado={valor => setTimeout()} ></ListaSuspensa>
                 <Botao>
                     Criar Card
                 </Botao>
