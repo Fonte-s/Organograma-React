@@ -56,9 +56,9 @@ const Formulario = () => {
                   ></CampoTexto>
 
                 <ListaSuspensa 
-                obrigatorio={true} 
-                label="Time:" 
-                itens ={props.times}
+               obrigatorio={true} 
+               label="Time:" 
+               itens ={itens.equipe}
                valor={time}
                aoAlterado={valor => setTimeout(valor)} ></ListaSuspensa>
                 <Botao>
