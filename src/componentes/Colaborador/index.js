@@ -1,16 +1,17 @@
 import './Colaborador.css'
+import {props} from 'react'
 
+const Colaborador = ({nome,imagem,cargo}) => {
 
-const Colaborador = () => {
     return (
 
-        <div>
-            <div>
-                <img src='' alt=''></img>
+        <div className='colaborador'>
+            <div className='cabecalho'>
+                <img src={imagem} alt='props.nome'></img>
             </div>
-            <div>
-                <h4></h4>
-                <h5></h5>
+            <div className='rodape'>
+                <h4>{nome} </h4>
+                <h5>{cargo}</h5>
             </div>
         </div>
 

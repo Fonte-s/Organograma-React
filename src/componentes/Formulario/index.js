@@ -61,7 +61,7 @@ const Formulario = (props) => {
                label="Time:" 
                itens ={props.times}
                valor={time}
-               aoAlterado={valor => setTimeout(valor)} ></ListaSuspensa>
+               aoAlterado={valor => setTime(valor)} ></ListaSuspensa>
                 <Botao>
                     Criar Card
                 </Botao>
