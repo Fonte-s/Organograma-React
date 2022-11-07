@@ -7,7 +7,7 @@ import {props} from 'react'
 
 
 
-const Formulario = () => {
+const Formulario = (props) => {
 
 
   
@@ -27,6 +27,7 @@ const Formulario = () => {
        })
     }
 
+   
     return (
         <section className="formulario">
             <form onSubmit={aoSalvar}>
@@ -58,7 +59,7 @@ const Formulario = () => {
                 <ListaSuspensa 
                obrigatorio={true} 
                label="Time:" 
-               itens ={itens.equipe}
+               itens ={props.times}
                valor={time}
                aoAlterado={valor => setTimeout(valor)} ></ListaSuspensa>
                 <Botao>
