@@ -1,12 +1,12 @@
 import './Colaborador.css'
 import {props} from 'react'
 
-const Colaborador = ({nome,imagem,cargo}) => {
+const Colaborador = ({nome,imagem,cargo, corDeFundo}) => {
 
     return (
 
         <div className='colaborador'>
-            <div className='cabecalho'>
+            <div className='cabecalho' style={{backgroundColor: corDeFundo}}>
                 <img src={imagem} alt='props.nome'></img>
             </div>
             <div className='rodape'>
