@@ -3,6 +3,7 @@ import Formulario from './componentes/Formulario';
 import {useState} from 'react';
 import Time from './componentes/Time';
 import {props} from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 function App() {
 
@@ -10,33 +11,38 @@ function App() {
   
   const [times, setTimes]  = useState([
     {
-
-
+      id:uuidv4(),
     nome:'Programação',
     cor:'#D9F7E9'
     },
     {
+      id:uuidv4(),
       nome:'Front-end',
     cor:'#E8F8F'
     },
     {
+      id:uuidv4(),
       nome:'Data Science',
     cor:'#F0F8E2'
     },
     {
+      id:uuidv4(),
       nome:'Devops',
       cor:'#FDE7E8'
     },
     {
+      id:uuidv4(),
       nome:'Mobile',
       cor:'#FAE9F5'
     },
     {
+      id:uuidv4(),
       nome:'Inovação e Gestão',
       cor: '#FFBA05',
    
     },
       {
+        id:uuidv4(),
       nome:'UX e Design',
       cor: '#FF8B29',
     
@@ -46,22 +52,20 @@ function App() {
   const [Colaboradores, setColaboradores] = useState ([])
 
 
-  function mudarCorDoTime(cor, nome){
+  function mudarCorDoTime(cor, id){
     setTimes(times.map( time =>{
-      if(time.nome === nome ){
-          console.log('mudando de cor')
-          console.log(cor)
-          console.log(nome)
+      if(time.id === id ){
+     
         time.cor = cor;
       }
-      console.log(time.cor)
+      
       return time
     }
     ))
   }
 
-  function deletarColaborador(){
-    console.log('deletando colaborador')
+  function deletarColaborador(id){
+    setColaboradores(Colaboradores.filter(colaborador => colaborador.id !== id));
   }
 
   const aoNovoColaboradorAdicionado = (colaborador) => {

@@ -12,7 +12,7 @@ const Time = (props) => {
     <section  className='time' style={{ backgroundColor: 
     hexToRgba(props.cor, '0.6') }}> 
 
-      <input onChange={evento => props.mudarCor(evento.target.value, props.nome)} value={props.cor}  type='color' className='input-cor'></input>
+      <input onChange={evento => props.mudarCor(evento.target.value, props.id)} value={props.cor}  type='color' className='input-cor'></input>
 
         <h3 style={{borderColor: props.corSecundaria }}>{props.nome}</h3> 
 
