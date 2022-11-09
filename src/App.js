@@ -6,47 +6,59 @@ import {props} from 'react';
 
 function App() {
 
-  const times  = [
+
+  
+  const [times, setTimes]  = useState([
     {
 
 
-      nome:'Programação',
-      corPrimaria: '#57c278',
-      corSecundaria:'#D9F7E9'
+    nome:'Programação',
+    cor:'#D9F7E9'
     },
     {
       nome:'Front-end',
-      corPrimaria: '#82CFFA',
-      corSecundaria:'#E8F8F'
+    cor:'#E8F8F'
     },
     {
       nome:'Data Science',
-      corPrimaria: '#A6d157',
-      corSecundaria:'#F0F8E2'
+    cor:'#F0F8E2'
     },
     {
       nome:'Devops',
-      corPrimaria: '#E06869',
-      corSecundaria:'#FDE7E8'
+      cor:'#FDE7E8'
     },
     {
       nome:'Mobile',
-      corPrimaria: '#D86EBF',
-      corSecundaria:'#FAE9F5'
+      cor:'#FAE9F5'
     },
     {
       nome:'Inovação e Gestão',
-      corPrimaria: '#FFBA05',
-      corSecundaria:'#FFF5D9'
+      cor: '#FFBA05',
+   
     },
       {
       nome:'UX e Design',
-      corPrimaria: '#FF8B29',
-      corSecundaria:'#FFEEDF'
+      cor: '#FF8B29',
+    
     },
-  ]
+  ])
 
   const [Colaboradores, setColaboradores] = useState ([])
+
+
+  function mudarCorDoTime(cor, nome){
+    setTimes(times.map( time =>{
+      if(time.nome === nome ){
+          console.log('mudando de cor')
+          console.log(cor)
+          console.log(nome)
+        time.cor = cor;
+      }
+      console.log(time.cor)
+      return time
+    }
+    ))
+  }
 
   function deletarColaborador(){
     console.log('deletando colaborador')
@@ -68,10 +80,11 @@ function App() {
     
      {times.map(time =>
      <Time 
-     key={time.nome} 
+     key={time.nome}
+     mudarCor={mudarCorDoTime} 
      nome={time.nome}
-    corPrimaria={time.corPrimaria} 
-    corSecundaria={time.corSecundaria}
+    cor={time.cor}
+    corSecundaria={time.cor} 
     Colaboradores={Colaboradores.filter(colaborador => colaborador.time == time.nome)}
     aoDeletar={deletarColaborador}
     />
